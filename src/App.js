@@ -16,11 +16,26 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import { 
+  FaMoon, 
+  FaMosque, 
+  FaFileContract, 
+  FaHandHoldingUsd, 
+  FaHands
+} from "react-icons/fa";
+import EuroIcon from '@material-ui/icons/EuroSymbol';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import LocationIcon from '@material-ui/icons/LocationOn';
 import MailIcon from '@material-ui/icons/Mail';
+import Collapse from '@material-ui/core/Collapse';
+import StarBorder from '@material-ui/icons/StarBorder';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import './App.css';
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const styles = theme => ({
   root: {
@@ -82,11 +97,23 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
   },
+  nested: {
+    paddingLeft: theme.spacing.unit * 4,
+  },
+  icon: {
+    fontSize: theme.typography.h6.fontSize
+  },
+  paragraph: {
+    fontSize: theme.typography.h4.fontSize,
+    lineHeight: "1.25rem",
+    marginLeft: theme.spacing.unit / 2
+  }
 });
 
 class App extends React.Component {
   state = {
     open: false,
+    categoryIslamOpen: false,
   };
 
   handleDrawerOpen = () => {
@@ -97,6 +124,10 @@ class App extends React.Component {
     this.setState({ open: false });
   };
 
+  handleClick = () => {
+    this.setState(state => ({ categoryIslamOpen: !state.categoryIslamOpen }));
+  };
+  
   render() {
     const { classes, theme } = this.props;
 
@@ -121,7 +152,7 @@ class App extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              IMV-Landau e. v. - Islamischer multikultureller Verein Landau
+              IMV-Landau e.V. - Islamischer multikultureller Verein Landau
             </Typography>
           </Toolbar>
         </AppBar>
@@ -146,21 +177,105 @@ class App extends React.Component {
           </div>
           <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+              <ListItem button key="Home">
+                <ListItemIcon><HomeIcon /></ListItemIcon>
+                <ListItemText primary="Startseite" />
               </ListItem>
-            ))}
+              
+              <ListItem button key="News">
+                <ListItemIcon><InfoIcon /></ListItemIcon>
+                <ListItemText primary="Neuigkeiten" />
+              </ListItem>
+              
+              <ListItem button onClick={this.handleClick}>
+                <ListItemIcon>
+                  <FaMoon className={classes.icon} />
+                </ListItemIcon>
+                <ListItemText inset primary="Islam" />
+                {this.state.categoryIslamOpen ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+              <Collapse in={this.state.categoryIslamOpen} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText inset primary="Der Islam" />
+                  </ListItem>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText inset primary="Die Propheten" />
+                  </ListItem>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText inset primary="Der Sinn des Lebens" />
+                  </ListItem>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText inset primary="Frauen im Islam" />
+                  </ListItem>
+                </List>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText inset primary="Der Heilige Koran" />
+                  </ListItem>
+                </List>
+              </Collapse>
+
+              <ListItem button key="Praying">
+                <ListItemIcon>
+                  <FaMosque className={classes.icon} style={{ display: "none" }} />
+                  <FaHands className={classes.icon} />
+                </ListItemIcon>
+                <ListItemText primary="Gebet" />
+              </ListItem>
+
+              <ListItem button key="Donate">
+                <ListItemIcon>
+                  <EuroIcon style={{ display: "none" }} />
+                  <FaHandHoldingUsd className={classes.icon} />
+                </ListItemIcon>
+                <ListItemText primary="Spenden" />
+              </ListItem>
+
+              <ListItem button key="Activities">
+                <ListItemIcon><ScheduleIcon /></ListItemIcon>
+                <ListItemText primary="Aktivitäten" />
+              </ListItem>
           </List>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+              <ListItem button key="GetInContact">
+                <ListItemIcon><LocationIcon /></ListItemIcon>
+                <ListItemText primary="Kontakt" />
               </ListItem>
-            ))}
+
+              <ListItem button key="TermsAndPrivacyPolicy">
+                <ListItemIcon>
+                  <FaFileContract className={classes.icon} />
+                </ListItemIcon>
+                <ListItemText primary="Satzung" />
+              </ListItem>
+
+              <ListItem button key="Imprint">
+                <ListItemIcon><span className={classes.paragraph} >§</span></ListItemIcon>
+                <ListItemText primary="Impressum" />
+              </ListItem>
           </List>
         </Drawer>
         <main className={classes.content}>
