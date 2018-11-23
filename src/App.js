@@ -37,6 +37,8 @@ import Home from './Home';
 import Islam from './Islam';
 import Prophets from './Prophets';
 import SenseOfLife from './SenseOfLife';
+import WomenAndIslam from './WomenAndIslam';
+import HolyQuran from './HolyQuran';
 import './App.css';
 
 const About = () =><h2>About</h2>;
@@ -230,7 +232,7 @@ class App extends React.Component {
                       </ListItem>
                     </List>
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
+                      <ListItem button component={Link} to='/women-and-islam/' className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
@@ -238,7 +240,7 @@ class App extends React.Component {
                       </ListItem>
                     </List>
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
+                      <ListItem button component={Link} to="/holy-quran/" className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
@@ -300,6 +302,8 @@ class App extends React.Component {
               <Route path="/islam/" component={Islam} />
               <Route path="/prophets/" component={Prophets} />
               <Route path="/sense-of-life/" component={SenseOfLife} />
+              <Route path="/women-and-islam/" component={WomenAndIslam} />
+              <Route path="/holy-quran/" component={HolyQuran} />
             </main>
           </React.Fragment>
         </Router>
