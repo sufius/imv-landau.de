@@ -18,7 +18,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import './App.css';
 
 const drawerWidth = 240;
 
@@ -84,7 +83,7 @@ const styles = theme => ({
   },
 });
 
-class App extends React.Component {
+class MiniDrawer extends React.Component {
   state = {
     open: false,
   };
@@ -121,7 +120,7 @@ class App extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              IMV-Landau e. v. - Islamischer multikultureller Verein Landau
+              Mini variant drawer
             </Typography>
           </Toolbar>
         </AppBar>
@@ -165,19 +164,29 @@ class App extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Typography variant="title" paragraph>
-            Herzlich Willkommen
+          <Typography paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent
+            elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in
+            hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum
+            velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing.
+            Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis
+            viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo.
+            Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus
+            at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed
+            ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
           </Typography>
           <Typography paragraph>
-            Völkerverständigung, Dialog und Vielfalt sind die gottgewollte Form der menschlichen Koexistenz.
-            Im Koran 49:13 heißt es: „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
-            und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“
-          </Typography>
-          <Typography paragraph style={{direction: "rtl"}}>
-            السلام عليكم ورحمة الله وبركاته<br/>
-            التفاهم الدولي والحوار والتنوع هوشكل من أشكال التعايش بين البشر<br/>
-            :يقول اللة تعالي في قرأنية<br/>
-            "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"<br/>
+            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
+            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus
+            sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
+            In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
+            et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique
+            sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo
+            viverra maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
+            ultrices sagittis orci a.
           </Typography>
         </main>
       </div>
@@ -185,9 +194,9 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+MiniDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(App);
+export default withStyles(styles, { withTheme: true })(MiniDrawer);
