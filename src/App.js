@@ -35,6 +35,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from './Home';
 import Islam from './Islam';
+import Prophets from './Prophets';
+import SenseOfLife from './SenseOfLife';
 import './App.css';
 
 const About = () =><h2>About</h2>;
@@ -116,7 +118,7 @@ const styles = theme => ({
 
 class App extends React.Component {
   state = {
-    open: false,
+    open: true,
     categoryIslamOpen: false,
   };
 
@@ -212,7 +214,7 @@ class App extends React.Component {
                       </ListItem>
                     </List>
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
+                      <ListItem button component={Link} to='/prophets/' className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
@@ -220,7 +222,7 @@ class App extends React.Component {
                       </ListItem>
                     </List>
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
+                      <ListItem button component={Link} to='/sense-of-life/' className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
@@ -296,6 +298,8 @@ class App extends React.Component {
               <Route path="/" exact component={Home} />
               <Route path="/about/" component={About} />
               <Route path="/islam/" component={Islam} />
+              <Route path="/prophets/" component={Prophets} />
+              <Route path="/sense-of-life/" component={SenseOfLife} />
             </main>
           </React.Fragment>
         </Router>
