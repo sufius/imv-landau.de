@@ -173,7 +173,7 @@ class App extends React.Component {
             Im Koran 49:13 heißt es: „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
             und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“
           </Typography>
-          <Typography paragraph style={{direction: "rtl"}}>
+          <Typography variant="h6" paragraph style={{direction: "rtl"}}>
             السلام عليكم ورحمة الله وبركاته<br/>
             التفاهم الدولي والحوار والتنوع هوشكل من أشكال التعايش بين البشر<br/>
             :يقول اللة تعالي في قرأنية<br/>
