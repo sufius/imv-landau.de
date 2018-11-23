@@ -16,7 +16,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import { 
   FaMoon, 
@@ -28,12 +27,17 @@ import {
 import EuroIcon from '@material-ui/icons/EuroSymbol';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import LocationIcon from '@material-ui/icons/LocationOn';
-import MailIcon from '@material-ui/icons/Mail';
 import Collapse from '@material-ui/core/Collapse';
 import StarBorder from '@material-ui/icons/StarBorder';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import Home from './Home';
 import './App.css';
+
+const About = () =><h2>About</h2>;
+const Users = () =><h2>Users</h2>;
 
 const drawerWidth = 260;
 
@@ -134,167 +138,167 @@ class App extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar
-          position="fixed"
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: this.state.open,
-          })}
-        >
-          <Toolbar disableGutters={!this.state.open}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerOpen}
-              className={classNames(classes.menuButton, {
-                [classes.hide]: this.state.open,
+        <Router>
+          <React.Fragment>
+            <AppBar
+              position="fixed"
+              className={classNames(classes.appBar, {
+                [classes.appBarShift]: this.state.open,
               })}
             >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
-              IMV-Landau e.V. - Islamischer multikultureller Verein Landau
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          className={classNames(classes.drawer, {
-            [classes.drawerOpen]: this.state.open,
-            [classes.drawerClose]: !this.state.open,
-          })}
-          classes={{
-            paper: classNames({
-              [classes.drawerOpen]: this.state.open,
-              [classes.drawerClose]: !this.state.open,
-            }),
-          }}
-          open={this.state.open}
-        >
-          <div className={classes.toolbar}>
-            <IconButton onClick={this.handleDrawerClose}>
-              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-              <ListItem button key="Home">
-                <ListItemIcon><HomeIcon /></ListItemIcon>
-                <ListItemText primary="Startseite" />
-              </ListItem>
-              
-              <ListItem button key="News">
-                <ListItemIcon><InfoIcon /></ListItemIcon>
-                <ListItemText primary="Neuigkeiten" />
-              </ListItem>
-              
-              <ListItem button onClick={this.handleClick}>
-                <ListItemIcon>
-                  <FaMoon className={classes.icon} />
-                </ListItemIcon>
-                <ListItemText inset primary="Islam" />
-                {this.state.categoryIslamOpen ? <ExpandLess /> : <ExpandMore />}
-              </ListItem>
-              <Collapse in={this.state.categoryIslamOpen} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+              <Toolbar disableGutters={!this.state.open}>
+                <IconButton
+                  color="inherit"
+                  aria-label="Open drawer"
+                  onClick={this.handleDrawerOpen}
+                  className={classNames(classes.menuButton, {
+                    [classes.hide]: this.state.open,
+                  })}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" color="inherit" noWrap>
+                  IMV-Landau e.V. - Islamischer multikultureller Verein Landau
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            <Drawer
+              variant="permanent"
+              className={classNames(classes.drawer, {
+                [classes.drawerOpen]: this.state.open,
+                [classes.drawerClose]: !this.state.open,
+              })}
+              classes={{
+                paper: classNames({
+                  [classes.drawerOpen]: this.state.open,
+                  [classes.drawerClose]: !this.state.open,
+                }),
+              }}
+              open={this.state.open}
+            >
+              <div className={classes.toolbar}>
+                <IconButton onClick={this.handleDrawerClose}>
+                  {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                </IconButton>
+              </div>
+              <Divider />
+              <List>
+                  <ListItem button component={Link} to='/' key="Home">
                     <ListItemIcon>
-                      <StarBorder />
+                        <FaMosque className={classes.icon} />
                     </ListItemIcon>
-                    <ListItemText inset primary="Der Islam" />
+                    <ListItemText primary="Startseite" />
                   </ListItem>
-                </List>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+                  
+                  <ListItem button component={Link} to='/about/' key="News">
+                    <ListItemIcon><InfoIcon /></ListItemIcon>
+                    <ListItemText primary="Neuigkeiten" />
+                  </ListItem>
+                  
+                  <ListItem button onClick={this.handleClick}>
                     <ListItemIcon>
-                      <StarBorder />
+                      <FaMoon className={classes.icon} />
                     </ListItemIcon>
-                    <ListItemText inset primary="Die Propheten" />
+                    <ListItemText inset primary="Islam" />
+                    {this.state.categoryIslamOpen ? <ExpandLess /> : <ExpandMore />}
                   </ListItem>
-                </List>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+                  <Collapse in={this.state.categoryIslamOpen} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <ListItem button component={Link} to='/users/' className={classes.nested}>
+                        <ListItemIcon>
+                          <StarBorder />
+                        </ListItemIcon>
+                        <ListItemText inset primary="Der Islam" />
+                      </ListItem>
+                    </List>
+                    <List component="div" disablePadding>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <StarBorder />
+                        </ListItemIcon>
+                        <ListItemText inset primary="Die Propheten" />
+                      </ListItem>
+                    </List>
+                    <List component="div" disablePadding>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <StarBorder />
+                        </ListItemIcon>
+                        <ListItemText inset primary="Der Sinn des Lebens" />
+                      </ListItem>
+                    </List>
+                    <List component="div" disablePadding>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <StarBorder />
+                        </ListItemIcon>
+                        <ListItemText inset primary="Frauen im Islam" />
+                      </ListItem>
+                    </List>
+                    <List component="div" disablePadding>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <StarBorder />
+                        </ListItemIcon>
+                        <ListItemText inset primary="Der Heilige Koran" />
+                      </ListItem>
+                    </List>
+                  </Collapse>
+    
+                  <ListItem button key="Praying">
                     <ListItemIcon>
-                      <StarBorder />
+                      <FaHands className={classes.icon} />
                     </ListItemIcon>
-                    <ListItemText inset primary="Der Sinn des Lebens" />
+                    <ListItemText primary="Gebet" />
                   </ListItem>
-                </List>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+    
+                  <ListItem button key="Donate">
                     <ListItemIcon>
-                      <StarBorder />
+                      <React.Fragment>
+                        <EuroIcon style={{ display: "none" }} />
+                        <FaHandHoldingUsd className={classes.icon} />
+                      </React.Fragment>
                     </ListItemIcon>
-                    <ListItemText inset primary="Frauen im Islam" />
+                    <ListItemText primary="Spenden" />
                   </ListItem>
-                </List>
-                <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+    
+                  <ListItem button key="Activities">
+                    <ListItemIcon><ScheduleIcon /></ListItemIcon>
+                    <ListItemText primary="Aktivitäten" />
+                  </ListItem>
+              </List>
+              <Divider />
+              <List>
+                  <ListItem button key="GetInContact">
                     <ListItemIcon>
-                      <StarBorder />
+                      <React.Fragment>
+                        <LocationIcon />
+                      </React.Fragment>
                     </ListItemIcon>
-                    <ListItemText inset primary="Der Heilige Koran" />
+                    <ListItemText primary="Kontakt" />
                   </ListItem>
-                </List>
-              </Collapse>
-
-              <ListItem button key="Praying">
-                <ListItemIcon>
-                  <FaMosque className={classes.icon} style={{ display: "none" }} />
-                  <FaHands className={classes.icon} />
-                </ListItemIcon>
-                <ListItemText primary="Gebet" />
-              </ListItem>
-
-              <ListItem button key="Donate">
-                <ListItemIcon>
-                  <EuroIcon style={{ display: "none" }} />
-                  <FaHandHoldingUsd className={classes.icon} />
-                </ListItemIcon>
-                <ListItemText primary="Spenden" />
-              </ListItem>
-
-              <ListItem button key="Activities">
-                <ListItemIcon><ScheduleIcon /></ListItemIcon>
-                <ListItemText primary="Aktivitäten" />
-              </ListItem>
-          </List>
-          <Divider />
-          <List>
-              <ListItem button key="GetInContact">
-                <ListItemIcon><LocationIcon /></ListItemIcon>
-                <ListItemText primary="Kontakt" />
-              </ListItem>
-
-              <ListItem button key="TermsAndPrivacyPolicy">
-                <ListItemIcon>
-                  <FaFileContract className={classes.icon} />
-                </ListItemIcon>
-                <ListItemText primary="Satzung" />
-              </ListItem>
-
-              <ListItem button key="Imprint">
-                <ListItemIcon><span className={classes.paragraph} >§</span></ListItemIcon>
-                <ListItemText primary="Impressum" />
-              </ListItem>
-          </List>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Typography variant="title" paragraph>
-            Herzlich Willkommen
-          </Typography>
-          <Typography paragraph>
-            Völkerverständigung, Dialog und Vielfalt sind die gottgewollte Form der menschlichen Koexistenz.
-            Im Koran 49:13 heißt es: „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
-            und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“
-          </Typography>
-          <Typography variant="h6" paragraph style={{direction: "rtl"}}>
-            السلام عليكم ورحمة الله وبركاته<br/>
-            التفاهم الدولي والحوار والتنوع هوشكل من أشكال التعايش بين البشر<br/>
-            :يقول اللة تعالي في قرأنية<br/>
-            "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"<br/>
-          </Typography>
-        </main>
+    
+                  <ListItem button key="TermsAndPrivacyPolicy">
+                    <ListItemIcon>
+                      <FaFileContract className={classes.icon} />
+                    </ListItemIcon>
+                    <ListItemText primary="Satzung" />
+                  </ListItem>
+    
+                  <ListItem button key="Imprint">
+                    <ListItemIcon><span className={classes.paragraph} >§</span></ListItemIcon>
+                    <ListItemText primary="Impressum" />
+                  </ListItem>
+              </List>
+            </Drawer>
+            <main className={classes.content}>
+              <div className={classes.toolbar} />
+              <Route path="/" exact component={Home} />
+              <Route path="/about/" component={About} />
+              <Route path="/users/" component={Users} />
+            </main>
+          </React.Fragment>
+        </Router>
       </div>
     );
   }
