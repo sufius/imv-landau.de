@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const Home = () => (<React.Fragment>
-  <Typography variant="title" paragraph>
+  <Typography variant="title" gutterBottom>
     Herzlich Willkommen
   </Typography>
   <Typography paragraph>

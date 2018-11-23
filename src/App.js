@@ -34,10 +34,10 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from './Home';
+import Islam from './Islam';
 import './App.css';
 
 const About = () =><h2>About</h2>;
-const Users = () =><h2>Users</h2>;
 
 const drawerWidth = 260;
 
@@ -204,7 +204,7 @@ class App extends React.Component {
                   </ListItem>
                   <Collapse in={this.state.categoryIslamOpen} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                      <ListItem button component={Link} to='/users/' className={classes.nested}>
+                      <ListItem button component={Link} to='/islam/' className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
@@ -295,7 +295,7 @@ class App extends React.Component {
               <div className={classes.toolbar} />
               <Route path="/" exact component={Home} />
               <Route path="/about/" component={About} />
-              <Route path="/users/" component={Users} />
+              <Route path="/islam/" component={Islam} />
             </main>
           </React.Fragment>
         </Router>
