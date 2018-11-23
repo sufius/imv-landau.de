@@ -2,19 +2,40 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const Home = () => (<React.Fragment>
-  <Typography variant="title" gutterBottom>
+  <img src="/images/bismillah-03.png" style={{ maxWidth: "300px", margin: "0 auto 16px", display: "block" }} />
+
+  <Typography variant="h5" gutterBottom>
     Herzlich Willkommen
   </Typography>
-  <Typography paragraph>
+
+  <Typography variant="subtitle2" paragraph>
     Völkerverständigung, Dialog und Vielfalt sind die gottgewollte Form der menschlichen Koexistenz.
-    Im Koran 49:13 heißt es: „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
+  </Typography>
+
+  <Typography variant="subtitle2">
+    Im Koran 49:13 heißt es:
+  </Typography>
+
+  <Typography variant="subtitle2" paragraph>
+    „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
     und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“
   </Typography>
+
+
+  <Typography variant="h4" gutterBottom style={{direction: "rtl"}}>
+    السلام عليكم ورحمة الله وبركاته
+  </Typography>
+
   <Typography variant="h6" paragraph style={{direction: "rtl"}}>
-    السلام عليكم ورحمة الله وبركاته<br/>
-    التفاهم الدولي والحوار والتنوع هوشكل من أشكال التعايش بين البشر<br/>
-    يقول اللة تعالي في قرأنية:<br/>
-    "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"<br/>
+    التفاهم الدولي والحوار والتنوع هوشكل من أشكال التعايش بين البشر
+  </Typography>
+
+  <Typography variant="h6" style={{direction: "rtl"}}>
+    يقول اللة تعالي في قرأنية:
+  </Typography>
+
+  <Typography variant="h6" paragraph style={{direction: "rtl"}}>
+    "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
   </Typography>
 </React.Fragment>);
 
