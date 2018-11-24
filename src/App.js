@@ -35,13 +35,12 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from './Home';
 import Islam from './Islam';
+import News from './News';
 import Prophets from './Prophets';
 import SenseOfLife from './SenseOfLife';
 import WomenAndIslam from './WomenAndIslam';
-import HolyQuran from './HolyQuran';
+import NobleQuran from './NobleQuran';
 import './App.css';
-
-const About = () =><h2>About</h2>;
 
 const drawerWidth = 260;
 
@@ -194,7 +193,7 @@ class App extends React.Component {
                     <ListItemText primary="Startseite" />
                   </ListItem>
                   
-                  <ListItem button component={Link} to='/about/' key="News">
+                  <ListItem button component={Link} to='/news/' key="News">
                     <ListItemIcon><InfoIcon /></ListItemIcon>
                     <ListItemText primary="Neuigkeiten" />
                   </ListItem>
@@ -298,12 +297,12 @@ class App extends React.Component {
             <main className={classes.content}>
               <div className={classes.toolbar} />
               <Route path="/" exact component={Home} />
-              <Route path="/about/" component={About} />
+              <Route path="/news/" component={News} />
               <Route path="/islam/" component={Islam} />
               <Route path="/prophets/" component={Prophets} />
               <Route path="/sense-of-life/" component={SenseOfLife} />
               <Route path="/women-and-islam/" component={WomenAndIslam} />
-              <Route path="/holy-quran/" component={HolyQuran} />
+              <Route path="/noble-quran/" component={NobleQuran} />
             </main>
           </React.Fragment>
         </Router>

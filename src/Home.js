@@ -17,8 +17,8 @@ const Home = () => (<React.Fragment>
   </Typography>
 
   <Typography variant="subtitle2" paragraph>
-    „O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
-    und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“
+    <i>„O ihr Menschen, Wir haben euch aus Mann und Frau erschaffen
+    und euch zu Völkern und Stämmen gemacht, auf dass ihr einander kennen lernen möget.“</i>
   </Typography>
 
 
@@ -34,8 +34,8 @@ const Home = () => (<React.Fragment>
     يقول اللة تعالي في قرأنية:
   </Typography>
 
-  <Typography variant="h6" paragraph style={{direction: "rtl"}}>
-    "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
+  <Typography variant="subtitle1" paragraph style={{direction: "rtl"}}>
+    <i>"يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"</i>
   </Typography>
 </React.Fragment>);
 

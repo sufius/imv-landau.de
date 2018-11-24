@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-const HolyQuran = () => (
+const NobleQuran = () => (
    <iframe
     border="0"
     cellSpacing="0"
@@ -11,4 +11,4 @@ const HolyQuran = () => (
     src="http://al-quran.info"
   />
 );
-export default HolyQuran;
+export default NobleQuran;
