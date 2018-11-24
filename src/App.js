@@ -239,7 +239,7 @@ class App extends React.Component {
                       </ListItem>
                     </List>
                     <List component="div" disablePadding>
-                      <ListItem button component={Link} to="/holy-quran/" className={classes.nested}>
+                      <ListItem button component={Link} to="/noble-quran/" className={classes.nested}>
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
