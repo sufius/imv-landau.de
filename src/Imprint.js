@@ -6,8 +6,8 @@ const Imprint = () => (
      <Typography variant="title" paragraph gutterBottom>
         Impressum
      </Typography>
-     <Typography variant="subheading">
-        Verantwortlich
+     <Typography variant="caption" paragraph gutterBottom>
+        Angaben gemäß § 5 TMG
      </Typography>
      <Typography paragraph>
        <strong>Anschrift</strong><br/>

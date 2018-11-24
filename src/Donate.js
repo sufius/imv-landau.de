@@ -21,8 +21,8 @@ const News = () => (
 
       <Typography variant="subtitle2" paragraph>
         <i>"Was immer ihr an Gutem spendet, das ist für euch selbst, und ihr spendet nicht, 
-	es sei denn aus Verlangen nach dem Angesicht Allahs. Und was immer ihr an Gutem spendet, 
-	das soll euch voll zurückerstattet werden, und es soll euch kein Unrecht zugefügt werden." (2:272)</i>
+      	es sei denn aus Verlangen nach dem Angesicht Allahs. Und was immer ihr an Gutem spendet, 
+      	das soll euch voll zurückerstattet werden, und es soll euch kein Unrecht zugefügt werden." (2:272)</i>
       </Typography>
     
       <Typography variant="subtitle1" paragraph style={{direction: "rtl"}}>
@@ -37,15 +37,15 @@ const News = () => (
         "وَمَا تُنفِقُواْ مِنْ خَيْرٍ فَإِنَّ اللّهَ بِهِ عَلِيمٌ"
       </Typography>
 
-      <Typography variant="Subheading" paragraph align="center">
+      <Typography variant="subheading" paragraph align="center">
         Islamischer multikultureller Verein
       </Typography>
-      <Typography variant="Subheading" paragraph align="center">
+      <Typography variant="subheading" paragraph align="center">
       	Spendenkonto:<br/>
       	IBAN: DE32548500100035145887<br/>
       	BIC: SOLADES1SUW
       </Typography>
-      <Typography variant="Subheading" paragraph align="center">
+      <Typography variant="subheading" paragraph align="center">
       	Steuer Nr.   24 / 652 / 53374 KVI/1
       </Typography>
 

@@ -6,14 +6,9 @@ const Statute = () => (
      <Typography variant="title" paragraph gutterBottom>
         Satzung
      </Typography>
-     <Typography variant="subheading">
-        Verantwortlich
-     </Typography>
      <Typography paragraph>
-       <strong>Anschrift</strong><br/>
+         <strong>Verantwortlich</strong><br/>
          Islamischer multikultureller Verein Landau e.V (IMV Landau)<br/>
-         Danziger Platz 14<br/>
-         76829 Landau in der Pfalz
      </Typography>
      <Typography paragraph>
          <strong>Telefon</strong><br/>

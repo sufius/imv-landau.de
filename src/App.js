@@ -43,6 +43,7 @@ import NobleQuran from './NobleQuran';
 import Prayer from './Prayer';
 import Donate from './Donate';
 import Schedule from './Schedule';
+import Location from './Location';
 import Statute from './Statute';
 import Imprint from './Imprint';
 import './App.css';
@@ -284,7 +285,7 @@ class App extends React.Component {
               </List>
               <Divider />
               <List>
-                  <ListItem button key="GetInContact">
+                  <ListItem button component={Link} to="/location/"  key="location">
                     <ListItemIcon>
                       <React.Fragment>
                         <LocationIcon />
@@ -318,6 +319,7 @@ class App extends React.Component {
               <Route path="/prayer/" component={Prayer} />
               <Route path="/donate/" component={Donate} />
               <Route path="/schedule/" component={Schedule} />
+              <Route path="/location/" component={Location} />
               <Route path="/statute/" component={Statute} />
               <Route path="/imprint/" component={Imprint} />
             </main>
