@@ -40,6 +40,8 @@ import Prophets from './Prophets';
 import SenseOfLife from './SenseOfLife';
 import WomenAndIslam from './WomenAndIslam';
 import NobleQuran from './NobleQuran';
+import Prayer from './Prayer';
+import Donate from './Donate';
 import './App.css';
 
 const drawerWidth = 260;
@@ -160,8 +162,15 @@ class App extends React.Component {
                 >
                   <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" color="inherit" noWrap>
-                  IMV-Landau e.V. - Islamischer multikultureller Verein Landau
+                <Typography
+                  variant="h6"
+                  color="inherit"
+                  component={Link}
+                  to="/"
+                  noWrap
+                  style={{ textDecoration: "none" }}
+                >
+                  IMV-Landau e.V. - Islamischer multikultureller Verein Landau (الجمعية الاسلامية للثقافات المتعددة مسجد ابي بكر الصديق)
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -243,19 +252,19 @@ class App extends React.Component {
                         <ListItemIcon>
                           <StarBorder />
                         </ListItemIcon>
-                        <ListItemText inset primary="Der Heilige Koran" />
+                        <ListItemText inset primary="Der edle Koran" />
                       </ListItem>
                     </List>
                   </Collapse>
     
-                  <ListItem button key="Praying">
+                  <ListItem button component={Link} to="/prayer/" key="Prayer">
                     <ListItemIcon>
                       <FaHands className={classes.icon} />
                     </ListItemIcon>
                     <ListItemText primary="Gebet" />
                   </ListItem>
     
-                  <ListItem button key="Donate">
+                  <ListItem button component={Link} to="/donate/" key="Donate">
                     <ListItemIcon>
                       <React.Fragment>
                         <EuroIcon style={{ display: "none" }} />
@@ -303,6 +312,8 @@ class App extends React.Component {
               <Route path="/sense-of-life/" component={SenseOfLife} />
               <Route path="/women-and-islam/" component={WomenAndIslam} />
               <Route path="/noble-quran/" component={NobleQuran} />
+              <Route path="/prayer/" component={Prayer} />
+              <Route path="/donate/" component={Donate} />
             </main>
           </React.Fragment>
         </Router>

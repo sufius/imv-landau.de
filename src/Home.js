@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const Home = () => (<React.Fragment>
-  <img src="/images/bismillah-03.png" style={{ maxWidth: "300px", margin: "0 auto 16px", display: "block" }} />
+  <img src="/images/bismillah-03.png" alt="Bismiallah" style={{ maxWidth: "300px", margin: "0 auto 16px", display: "block" }} />
 
   <Typography variant="h5" gutterBottom>
     Herzlich Willkommen
@@ -35,7 +35,7 @@ const Home = () => (<React.Fragment>
   </Typography>
 
   <Typography variant="subtitle1" paragraph style={{direction: "rtl"}}>
-    <i>"يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"</i>
+    "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
   </Typography>
 </React.Fragment>);
 
