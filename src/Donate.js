@@ -37,15 +37,15 @@ const News = () => (
         "وَمَا تُنفِقُواْ مِنْ خَيْرٍ فَإِنَّ اللّهَ بِهِ عَلِيمٌ"
       </Typography>
 
-      <Typography variant="h6" paragraph align="center">
+      <Typography variant="Subheading" paragraph align="center">
         Islamischer multikultureller Verein
       </Typography>
-      <Typography variant="h6" paragraph align="center">
+      <Typography variant="Subheading" paragraph align="center">
       	Spendenkonto:<br/>
       	IBAN: DE32548500100035145887<br/>
       	BIC: SOLADES1SUW
       </Typography>
-      <Typography variant="h6" paragraph align="center">
+      <Typography variant="Subheading" paragraph align="center">
       	Steuer Nr.   24 / 652 / 53374 KVI/1
       </Typography>
 

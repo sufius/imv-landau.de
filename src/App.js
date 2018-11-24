@@ -42,6 +42,9 @@ import WomenAndIslam from './WomenAndIslam';
 import NobleQuran from './NobleQuran';
 import Prayer from './Prayer';
 import Donate from './Donate';
+import Schedule from './Schedule';
+import Statute from './Statute';
+import Imprint from './Imprint';
 import './App.css';
 
 const drawerWidth = 260;
@@ -274,7 +277,7 @@ class App extends React.Component {
                     <ListItemText primary="Spenden" />
                   </ListItem>
     
-                  <ListItem button key="Activities">
+                  <ListItem button component={Link} to="/schedule/" key="Activities">
                     <ListItemIcon><ScheduleIcon /></ListItemIcon>
                     <ListItemText primary="Aktivitäten" />
                   </ListItem>
@@ -290,14 +293,14 @@ class App extends React.Component {
                     <ListItemText primary="Kontakt" />
                   </ListItem>
     
-                  <ListItem button key="TermsAndPrivacyPolicy">
+                  <ListItem button component={Link} to="/statute/" key="Statute">
                     <ListItemIcon>
                       <FaFileContract className={classes.icon} />
                     </ListItemIcon>
                     <ListItemText primary="Satzung" />
                   </ListItem>
     
-                  <ListItem button key="Imprint">
+                  <ListItem button component={Link} to="/imprint/" key="Imprint">
                     <ListItemIcon><span className={classes.paragraph} >§</span></ListItemIcon>
                     <ListItemText primary="Impressum" />
                   </ListItem>
@@ -314,6 +317,9 @@ class App extends React.Component {
               <Route path="/noble-quran/" component={NobleQuran} />
               <Route path="/prayer/" component={Prayer} />
               <Route path="/donate/" component={Donate} />
+              <Route path="/schedule/" component={Schedule} />
+              <Route path="/statute/" component={Statute} />
+              <Route path="/imprint/" component={Imprint} />
             </main>
           </React.Fragment>
         </Router>
