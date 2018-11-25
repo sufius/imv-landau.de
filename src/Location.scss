@@ -1,4 +1,7 @@
 .ol-control.layer-switcher {
+  &.shown {
+    display: table,
+  }
   /* Base for label styling */
   [type="checkbox"]:not(:checked),
   [type="checkbox"]:checked {

@@ -34,7 +34,7 @@ const Home = () => (<React.Fragment>
     يقول اللة تعالي في قرأنية:
   </Typography>
 
-  <Typography variant="subtitle1" paragraph style={{direction: "rtl"}}>
+  <Typography variant="h6" paragraph style={{direction: "rtl"}}>
     "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
   </Typography>
 </React.Fragment>);
