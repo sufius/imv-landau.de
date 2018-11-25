@@ -73,7 +73,7 @@ class Location extends React.Component {
     });
 
     var defaultLayer = new TileLayer({
-      title: "Satellite & Roads",
+      title: "Map/Satellite",
       source: new XYZ({
         url: "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       })
