@@ -190,7 +190,7 @@ class App extends React.Component {
               })}
               classes={{
                 paper: classNames({
-                  [classes.drawerOpen]: this.state.open === null && (isWidthUp('sm', this.props.width) || this.state.open),
+                  [classes.drawerOpen]: (this.state.open === null && isWidthUp('sm', this.props.width)) || this.state.open,
                   [classes.drawerClose]: (this.state.open !== null && !this.state.open) || (this.state.open === null && !isWidthUp('sm', this.props.width)),
                 }),
               }}
