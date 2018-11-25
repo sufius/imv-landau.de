@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const Home = () => (<React.Fragment>
-  <img src="/images/bismillah-03.png" alt="Bismiallah" style={{ maxWidth: "300px", margin: "0 auto 16px", display: "block" }} />
+  <img src="/images/bismillah-03.png" alt="Bismiallah" style={{ width: "300px", maxWidth: "100%", margin: "0 auto 16px", display: "block" }} />
 
   <Typography variant="h5" gutterBottom>
     Herzlich Willkommen
