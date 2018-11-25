@@ -156,16 +156,16 @@ class App extends React.Component {
             <AppBar
               position="fixed"
               className={classNames(classes.appBar, {
-                [classes.appBarShift]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
+                [classes.appBarShift]: (this.state.open === null && isWidthUp('sm', this.props.width)) || this.state.open,
               })}
             >
-              <Toolbar disableGutters={this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width)}>
+              <Toolbar disableGutters={(this.state.open !== null && !this.state.open) || (this.state.open === null && !isWidthUp('sm', this.props.width))}>
                 <IconButton
                   color="inherit"
                   aria-label="Open drawer"
                   onClick={this.handleDrawerOpen}
                   className={classNames(classes.menuButton, {
-                    [classes.hide]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
+                    [classes.hide]: (this.state.open === null && isWidthUp('sm', this.props.width)) || this.state.open,
                   })}
                 >
                   <MenuIcon />
@@ -185,16 +185,16 @@ class App extends React.Component {
             <Drawer
               variant="permanent"
               className={classNames(classes.drawer, {
-                [classes.drawerOpen]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
-                [classes.drawerClose]: this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width),
+                [classes.drawerOpen]: (this.state.open === null && isWidthUp('sm', this.props.width)) || this.state.open,
+                [classes.drawerClose]: (this.state.open !== null && !this.state.open) || (this.state.open === null && !isWidthUp('sm', this.props.width)),
               })}
               classes={{
                 paper: classNames({
-                  [classes.drawerOpen]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
-                  [classes.drawerClose]: this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width),
+                  [classes.drawerOpen]: this.state.open === null && (isWidthUp('sm', this.props.width) || this.state.open),
+                  [classes.drawerClose]: (this.state.open !== null && !this.state.open) || (this.state.open === null && !isWidthUp('sm', this.props.width)),
                 }),
               }}
-              open={this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open}
+              open={(this.state.open === null && isWidthUp('sm', this.props.width)) || this.state.open}
             >
               <div className={classes.toolbar}>
                 <IconButton onClick={this.handleDrawerClose}>

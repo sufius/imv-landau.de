@@ -42,7 +42,7 @@ const Prayer = ({ classes }) => (
 
     <Grid container spacing={24}>
       <Grid className={classes.gridItem} item sm={12} md={6}>
-        <Typography noWrap variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Fajr (Gebet vor dem Sonnenaufgang)
         </Typography>
         <div className={classes.videoContainer}>
@@ -56,7 +56,7 @@ const Prayer = ({ classes }) => (
         </div>
       </Grid>
       <Grid className={classes.gridItem} item sm={12} md={6}>
-        <Typography noWrap variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Dhuhr (Mittagsgebet, nach Kulmination der Sonne)
         </Typography>
         <div className={classes.videoContainer}>
@@ -73,7 +73,7 @@ const Prayer = ({ classes }) => (
 
     <Grid container spacing={24}>
       <Grid className={classes.gridItem} item sm={12} md={6}>
-        <Typography noWrap variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Asr (Nachmittagsgebet, vor dem Sonnenuntergang)
         </Typography>
         <div className={classes.videoContainer}>
@@ -87,7 +87,7 @@ const Prayer = ({ classes }) => (
         </div>
       </Grid>
       <Grid className={classes.gridItem} item sm={12} md={6}>
-        <Typography noWrap variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Maghreb (Gebet nach dem Sonnenuntergang)
         </Typography>
         <div className={classes.videoContainer}>
@@ -104,7 +104,7 @@ const Prayer = ({ classes }) => (
 
     <Grid container spacing={24}>
       <Grid className={classes.gridItem} item sm={12} md={6}>
-        <Typography noWrap variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Ishaa (Einbruch der Nacht, bis Mitternacht oder bis zum Morgengrauen)
         </Typography>
         <div className={classes.videoContainer}>
