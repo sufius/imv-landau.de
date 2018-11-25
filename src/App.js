@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -125,7 +126,7 @@ const styles = theme => ({
 
 class App extends React.Component {
   state = {
-    open: true,
+    open: null,
     categoryIslamOpen: false,
   };
 
@@ -152,16 +153,16 @@ class App extends React.Component {
             <AppBar
               position="fixed"
               className={classNames(classes.appBar, {
-                [classes.appBarShift]: this.state.open,
+                [classes.appBarShift]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
               })}
             >
-              <Toolbar disableGutters={!this.state.open}>
+              <Toolbar disableGutters={this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width)}>
                 <IconButton
                   color="inherit"
                   aria-label="Open drawer"
                   onClick={this.handleDrawerOpen}
                   className={classNames(classes.menuButton, {
-                    [classes.hide]: this.state.open,
+                    [classes.hide]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
                   })}
                 >
                   <MenuIcon />
@@ -181,16 +182,16 @@ class App extends React.Component {
             <Drawer
               variant="permanent"
               className={classNames(classes.drawer, {
-                [classes.drawerOpen]: this.state.open,
-                [classes.drawerClose]: !this.state.open,
+                [classes.drawerOpen]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
+                [classes.drawerClose]: this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width),
               })}
               classes={{
                 paper: classNames({
-                  [classes.drawerOpen]: this.state.open,
-                  [classes.drawerClose]: !this.state.open,
+                  [classes.drawerOpen]: this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open,
+                  [classes.drawerClose]: this.state.open !== null && !this.state.open || this.state.open === null && !isWidthUp('sm', this.props.width),
                 }),
               }}
-              open={this.state.open}
+              open={this.state.open === null && isWidthUp('sm', this.props.width) || this.state.open}
             >
               <div className={classes.toolbar}>
                 <IconButton onClick={this.handleDrawerClose}>
@@ -335,4 +336,4 @@ App.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(App);
+export default withWidth()(withStyles(styles, { withTheme: true })(App));
