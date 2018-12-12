@@ -118,7 +118,7 @@ const styles = theme => ({
     fontSize: theme.typography.h6.fontSize
   },
   paragraph: {
-    fontSize: theme.typography.h6.fontSize,
+    fontSize: theme.typography.h5.fontSize,
     lineHeight: "1.25rem",
     marginLeft: theme.spacing.unit / 2,
     [theme.breakpoints.up('sm')]: {
