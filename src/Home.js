@@ -20,7 +20,8 @@ const styles = theme => ({
   tableWrapper: {
     width: "100%",
     maxWidth: "500px",
-    overflowX: "auto"
+    overflowX: "auto",
+    marginBottom: theme.spacing.unit
   },
   tableCell: {
     paddingRight: 0,
@@ -98,10 +99,6 @@ class Home extends React.Component {
                 <Typography variant="body1" gutterBottom>
                   in Landau (Pfalz), Deutschland
                 </Typography>
-                <Typography variant="caption" paragraph gutterBottom>
-                  Berechnung gemäß:<br/>
-                  Islamische Weltliga/Muslim World League (MWL)
-                </Typography>
     
                 <Paper className={classes.tableWrapper}>
                   <Table className={classes.table}>
@@ -137,6 +134,10 @@ class Home extends React.Component {
                     </TableBody>
                   </Table>
                 </Paper>
+
+                <Typography variant="caption" paragraph gutterBottom>
+                  Berechnung gemäß: Islamische Weltliga/Muslim World League (MWL)
+                </Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>
