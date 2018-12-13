@@ -8,7 +8,7 @@ const Statute = () => (
      </Typography>
      <Typography paragraph>
          <strong>Verantwortlich</strong><br/>
-         Islamischer multikultureller Verein Landau e.V (IMV Landau)<br/>
+         Islamischer multikultureller Verein Landau e.V (IMV Landau e.V.)<br/>
      </Typography>
      <Typography paragraph>
          <strong>Telefon</strong><br/>
