@@ -111,7 +111,7 @@ class Location extends React.Component {
           <Typography paragraph>
             <strong>Anschrift</strong>
             <br />
-            Islamischer multikultureller Verein Landau e.V (IMV Landau)
+            Islamischer multikultureller Verein Landau e.V (IMV Landau e.V.)
             <br />
             Danziger Platz 14
             <br />
