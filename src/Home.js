@@ -11,7 +11,9 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Moment from "react-moment";
+import ImageGallery from 'react-image-gallery';
 import "moment/locale/de";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const styles = theme => ({
   root: {
@@ -29,6 +31,11 @@ const styles = theme => ({
       paddingRight: 0
     }
   },
+  imageGallery: {
+    "& .image-gallery": {
+      width: "100%"
+    }
+  },
   timingsColumn: {
     display: "flex",
     flexDirection: "column"
@@ -41,11 +48,27 @@ const styles = theme => ({
   }
 });
 
+const images = [
+  {
+    original: 'http://lorempixel.com/1000/600/nature/1/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+  },
+  {
+    original: 'http://lorempixel.com/1000/600/nature/2/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+  },
+  {
+    original: 'http://lorempixel.com/1000/600/nature/3/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+  }
+];
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null
+      data: null,
+      photos: []
     };
   }
 
@@ -56,6 +79,17 @@ class Home extends React.Component {
       .then(response => response.json())
       .then(response => {
         this.setState({ data: response.data });
+      });
+    fetch("/fetch/photos")
+      .then(response => response.json())
+      .then(response => {
+        const photos = response.data.map((photo) => {
+          return {
+            original: '/uploads/photos/' + photo,
+            thumbnail: '/uploads/photos/' + photo
+          }
+        });
+        this.setState({ photos });
       });
   };
 
@@ -226,6 +260,13 @@ class Home extends React.Component {
               "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَى
               وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
             </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <ImageGallery 
+              showThumbnails={false}
+              className={classes.imageGallery} 
+              items={this.state.photos}
+            />
           </Grid>
         </Grid>
       </div>

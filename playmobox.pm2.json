@@ -1,0 +1,13 @@
+{
+  "apps" : [{
+    "name"       : "JJWfjeE",
+    "script"     : "npm",
+    "interpreter": "node",
+    "args"       : "start --prefix /home/app/my-playmobox"
+  },{
+    "name"       : "JJWfjeE - photo server",
+    "script"     : "node",
+    "interpreter": "node",
+    "args"       : "server.js"
+  }]
+}
