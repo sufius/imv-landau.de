@@ -48,21 +48,6 @@ const styles = theme => ({
   }
 });
 
-const images = [
-  {
-    original: 'http://lorempixel.com/1000/600/nature/1/',
-    thumbnail: 'http://lorempixel.com/250/150/nature/1/',
-  },
-  {
-    original: 'http://lorempixel.com/1000/600/nature/2/',
-    thumbnail: 'http://lorempixel.com/250/150/nature/2/'
-  },
-  {
-    original: 'http://lorempixel.com/1000/600/nature/3/',
-    thumbnail: 'http://lorempixel.com/250/150/nature/3/'
-  }
-];
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -89,12 +74,12 @@ class Home extends React.Component {
         }
       })
       .then(response => {
-        const photos = response.data.length && response.data.map((photo) => {
+        const photos = response.data.map((photo) => {
           return {
             original: '/uploads/photos/' + photo,
             thumbnail: '/uploads/photos/' + photo
           }
-        }) || null;
+        });
         this.setState({ photos });
       });
   };
@@ -267,18 +252,18 @@ class Home extends React.Component {
               وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
             </Typography>
           </Grid>
-          <Grid item xs={12}>
+          {this.state.photos.length ? (<Grid item xs={12}>
             <Typography variant="h5" gutterBottom>
               Galerie
             </Typography>
             <ImageGallery 
               showThumbnails={false}
-              slideDuration={3000}
+              slideDuration={2000}
               slideInterval={7000}
               className={classes.imageGallery} 
-              items={this.state.photos || images}
+              items={this.state.photos}
             />
-          </Grid>
+          </Grid>) : null}
         </Grid>
       </div>
     );
