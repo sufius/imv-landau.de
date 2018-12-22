@@ -262,6 +262,9 @@ class Home extends React.Component {
             </Typography>
           </Grid>
           <Grid item xs={12}>
+            <Typography variant="h5" gutterBottom>
+              Galerie
+            </Typography>
             <ImageGallery 
               showThumbnails={false}
               className={classes.imageGallery} 
