@@ -267,6 +267,8 @@ class Home extends React.Component {
             </Typography>
             <ImageGallery 
               showThumbnails={false}
+              slideDuration={3000}
+              slideInterval={7000}
               className={classes.imageGallery} 
               items={this.state.photos}
             />
