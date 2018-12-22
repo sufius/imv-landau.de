@@ -81,14 +81,20 @@ class Home extends React.Component {
         this.setState({ data: response.data });
       });
     fetch("/fetch/photos")
-      .then(response => response.json())
       .then(response => {
-        const photos = response.data.map((photo) => {
+        if (response.ok){
+          return response.json();
+        } else {
+          return {data: []};
+        }
+      })
+      .then(response => {
+        const photos = response.data.length && response.data.map((photo) => {
           return {
             original: '/uploads/photos/' + photo,
             thumbnail: '/uploads/photos/' + photo
           }
-        });
+        }) || null;
         this.setState({ photos });
       });
   };
@@ -270,7 +276,7 @@ class Home extends React.Component {
               slideDuration={3000}
               slideInterval={7000}
               className={classes.imageGallery} 
-              items={this.state.photos}
+              items={this.state.photos || images}
             />
           </Grid>
         </Grid>

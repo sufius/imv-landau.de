@@ -5,7 +5,7 @@
     "interpreter": "node",
     "args"       : "start --prefix /home/app/my-playmobox"
   },{
-    "name"       : "JJWfjeE - photo server",
+    "name"       : "photos",
     "script"     : "server.js",
     "interpreter": "node"
   }]

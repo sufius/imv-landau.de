@@ -32,7 +32,21 @@ const styles = theme => ({
     "& .layer-switcher": {
       top: "7em",
       left: ".5em",
-      right: "auto"
+      right: "auto",
+      "&.shown.ol-control": {
+        backgroundColor: "rgba(255,255,255,0.4)",
+      },
+      "& .panel": {
+        height: "38px",
+        border: 0,
+        borderRadius: "2px",
+        paddingRight: theme.spacing.unit,
+        margin: "1px",
+        "& ul": {
+          margin: "8px 0",
+          paddingLeft: theme.spacing.unit
+        } 
+      }
     }
   },
   content: {
