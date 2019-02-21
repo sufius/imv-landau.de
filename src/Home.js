@@ -11,9 +11,21 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Moment from "react-moment";
-import ImageGallery from 'react-image-gallery';
 import "moment/locale/de";
-import "react-image-gallery/styles/css/image-gallery.css";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const settings = {
+  dots: false,
+  lazyLoad: true,
+  speed: 500,
+  touchThreshold: 20,
+  autoplay:true,
+  autoplayTimeout:5000,
+  autoplayHoverPause:false
+};
 
 const styles = theme => ({
   root: {
@@ -31,17 +43,24 @@ const styles = theme => ({
       paddingRight: 0
     }
   },
-  imageGallery: {
-    "& .image-gallery": {
-      width: "100%"
-    }
-  },
   timingsColumn: {
     display: "flex",
     flexDirection: "column"
   },
   progress: {
     margin: theme.spacing.unit * 2
+  },
+  sliderContainer: {
+    padding: theme.spacing.unit * 4
+  },
+  slider: {
+    width: "100%",
+    "& img": {
+      margin: "auto"
+    },
+    "& .slick-prev:before, & .slick-next:before": {
+      color: "black"
+    }
   },
   center: {
     alignSelf: "center"
@@ -65,20 +84,18 @@ class Home extends React.Component {
       .then(response => {
         this.setState({ data: response.data });
       });
+
     fetch("/fetch/photos")
       .then(response => {
-        if (response.ok){
+        if (response.ok) {
           return response.json();
         } else {
-          return {data: []};
+          return { data: [] };
         }
       })
       .then(response => {
-        const photos = response.data.map((photo) => {
-          return {
-            original: '/uploads/photos/' + photo,
-            thumbnail: '/uploads/photos/' + photo
-          }
+        const photos = response.data.map(photo => {
+          return "/uploads/photos/" + photo;
         });
         this.setState({ photos });
       });
@@ -252,19 +269,23 @@ class Home extends React.Component {
               وَجَعَلْنَاكُمْ شُعُوباً وَقَبَائِلَ لِتَعَارَفُوا"
             </Typography>
           </Grid>
-          {this.state.photos.length ? (<Grid item xs={12}>
+        </Grid>
+        {this.state.photos.length ? (
+          <React.Fragment>
             <Typography variant="h5" gutterBottom>
               Galerie
             </Typography>
-            <ImageGallery 
-              showThumbnails={false}
-              slideDuration={2000}
-              slideInterval={7000}
-              className={classes.imageGallery} 
-              items={this.state.photos}
-            />
-          </Grid>) : null}
-        </Grid>
+            <div className={classes.sliderContainer}>
+              <Slider {...settings} className={classes.slider}>
+                {this.state.photos.map((photo, index) => (
+                  <div key={index}>
+                    <img key={index} alt="" src={photo} />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </React.Fragment>
+        ) : null}
       </div>
     );
   }
