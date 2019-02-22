@@ -7,7 +7,7 @@ const link = (
     target="_blank"
     href="https://www.playmobox.com/de"
   >
-    www.playmobox.com
+    playmobox.com
   </a>
 );
 
@@ -66,7 +66,7 @@ const Imprint = () => (
     </Typography>
     <Typography variant="caption" paragraph>
       Die grafische Gestaltung und technische Umsetzung dieser Webseite wurde
-      mit Hilfe von {link} erstellt. Für den Inhalt bleibt der Herausgeber
+      mit Hilfe von {link} realisiert. Für den Inhalt bleibt der Herausgeber
       dieser Webseite verantwortlich. Bei technischen Problemen nehmen Sie bitte
       Kontakt mit dem Webmaster auf.
     </Typography>
