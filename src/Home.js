@@ -78,7 +78,7 @@ class Home extends React.Component {
 
   componentDidMount = () => {
     fetch(
-      "http://api.aladhan.com/v1/timings?latitude=49.1955335&longitude=8.1116213&method=3&address=Landau%2FGermany"
+      window.location.protocol + "//api.aladhan.com/v1/timings?latitude=49.1955335&longitude=8.1116213&method=3&address=Landau%2FGermany"
     )
       .then(response => response.json())
       .then(response => {
