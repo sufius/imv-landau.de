@@ -84,7 +84,7 @@ class Home extends React.Component {
       .then(response => {
         this.setState({ data: response.data });
       });
-
+/*
     fetch("/fetch/photos")
       .then(response => {
         if (response.ok) {
@@ -99,6 +99,7 @@ class Home extends React.Component {
         });
         this.setState({ photos });
       });
+*/
   };
 
   render() {
