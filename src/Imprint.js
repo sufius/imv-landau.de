@@ -5,6 +5,7 @@ const link = (
   <a
     style={{ textDecoration: "none", color: "#21CBF3" }}
     target="_blank"
+    rel="noopener noreferrer"
     href="https://www.playmobox.com/de"
   >
     playmobox.com
